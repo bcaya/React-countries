@@ -9,23 +9,43 @@ import {
   Box,
   Heading,
   Container,
-  Subhead
+  Subhead,
+  Textarea,
+  Divider
 } from 'rebass'; 
-import ListCountries from './Countries'; 
+import ListCountries from './ListCountries'; 
 
+class Filter extends Component { 
+    render() {
+      return (
+        <Textarea
+          rows={1}
+          placeholder="Start typing a country!"
+          onKeyUp={ event => 
+            this.props.onTextChange(event.target.value)}
+        />
+      )
+    }
+  }
 
 class App extends Component {
-
+  state = {filterString:'', countries: []}
   render() {
+  let countryToRender =  this.state.countries.filter(country => 
+        country.name.toLowerCase().includes(
+          this.state.filterString.toLowerCase()))
+
     return ( 
    <Container>
       <Heading textAlign="center">Around the World</Heading>
         <Subhead textAlign="center">Learn about our neighbors around the world!</Subhead>
-        <Flex mx={-2}>
-          <Box width={1/2} px={2}>
-            <ListCountries/>
-          </Box>
-        </Flex>
+        <Divider/>
+        <Filter onTextChange={text => {
+                this.setState({filterString: text})
+              }}/>
+      <Flex flexWrap='wrap' width={1}flexDirection="row" mx={-2}>
+       <ListCountries/>
+    </Flex>
    </Container>
     );
   }
