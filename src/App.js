@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Route, Switch } from 'react-router-dom'; 
 import axios from 'axios';
 import {
   ButtonCircle,
@@ -13,42 +14,15 @@ import {
   Textarea,
   Divider
 } from 'rebass'; 
-import ListCountries from './ListCountries'; 
+import Home from './Home'; 
 
-class Filter extends Component { 
-    render() {
-      return (
-        <Textarea
-          rows={1}
-          placeholder="Start typing a country!"
-          onKeyUp={ event => 
-            this.props.onTextChange(event.target.value)}
-        />
-      )
-    }
-  }
 
-class App extends Component {
-  state = {filterString:'', countries: []}
-  render() {
-  let countryToRender =  this.state.countries.filter(country => 
-        country.name.toLowerCase().includes(
-          this.state.filterString.toLowerCase()))
-
-    return ( 
-   <Container>
-      <Heading textAlign="center">Around the World</Heading>
-        <Subhead textAlign="center">Learn about our neighbors around the world!</Subhead>
-        <Divider/>
-        <Filter onTextChange={text => {
-                this.setState({filterString: text})
-              }}/>
-      <Flex flexWrap='wrap' width={1}flexDirection="row" mx={-2}>
-       <ListCountries/>
-    </Flex>
-   </Container>
-    );
-  }
-}
+const App = () => (
+  <div>
+    <Switch>
+      <Route exact path ="/" component={Home} />
+    </Switch>
+  </div>
+)
 
 export default App;

@@ -7,16 +7,24 @@ import {
   Box,
   Image,
   Text,
-  Flex,
   Row,
   Column,
-  Small 
+  Small, 
 } from 'rebass'; 
 import axios from 'axios'; 
 
+
+const Grid = (props) => (
+  <Box {...props}
+    display='inline-block'
+    verticalAlign='top'
+    px={2} />
+)
+
+ 
 class ListCountries extends Component{
     state = { countries: [] } 
-
+    
   componentDidMount(){
     axios.get('https://restcountries.eu/rest/v2/all')
       .then( res => this.setState({ countries: res.data }) )
@@ -26,10 +34,11 @@ class ListCountries extends Component{
      return(
       
  <Fragment>
+
     { countries.map( country => 
              <Box width={1/5} float="left" >
                <Panel >
-                {/* <Image ratio={1/3} src={country.flag}/> */}
+                <Image ratio={1/3} src={country.flag}/>
                   <Subhead bg="yellow" fontSize={2}>
                     {country.name}
                       <br/>
@@ -40,11 +49,15 @@ class ListCountries extends Component{
                     {country.capital}
                     {country.subregion}
                   {country.topLevelDomain}
+                  {country.population}
+                  {country.callingCodes}
                 </Text>
                </Panel>
              </Box>
     )}
  </Fragment>
+
+ 
      )
    }
 }

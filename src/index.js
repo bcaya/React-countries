@@ -5,15 +5,17 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux'; 
 import { injectGlobal } from 'styled-components'; 
-
+import { BrowserRouter as Router } from 'react-router-dom';
 injectGlobal`
   * { box-sizing: border-box; }
   body { margin: 0; }
 `
 ReactDOM.render(
-  <Provider>
-      <App />
-  </Provider>,
+  <Router>
+    <Provider>
+        <App />
+    </Provider>
+  </Router>,
   document.getElementById('root')
 );
 registerServiceWorker();
