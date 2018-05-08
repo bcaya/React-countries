@@ -25,9 +25,9 @@ class Home extends React.Component{
 
     return ( 
    <Container>
-      <Heading textAlign="center">Around the World</Heading>
+      {/* <Heading textAlign="center">Around the World</Heading> */}
       <Navbar />
-        <Subhead textAlign="center">Learn about our neighbors around the world!</Subhead>
+        {/* <Subhead textAlign="center">Learn about our neighbors around the world!</Subhead> */}
         <Divider/>
 
       <Flex flexWrap='wrap' width={1}flexDirection="row" mx={-2}>

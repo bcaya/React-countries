@@ -10,6 +10,7 @@ import {
   Row,
   Column,
   Small, 
+  Input
 } from 'rebass'; 
 import axios from 'axios'; 
 
@@ -25,7 +26,7 @@ class Filter extends React.Component{
    render() {
       return (
         <div>
-          <input type="text" onKeyUp={event => 
+          <Input type="text" onKeyUp={event => 
             this.props.onTextChange(event.target.value)}/>
         </div>
       )
