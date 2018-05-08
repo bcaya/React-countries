@@ -21,9 +21,21 @@ const Grid = (props) => (
     px={2} />
 )
 
+class Filter extends React.Component{
+   render() {
+      return (
+        <div>
+          <input type="text" onKeyUp={event => 
+            this.props.onTextChange(event.target.value)}/>
+        </div>
+      )
+    }
+}
+
  
 class ListCountries extends Component{
-    state = { countries: [] } 
+    state = { countries: [],
+              filterString: ''  } 
     
   componentDidMount(){
     axios.get('https://restcountries.eu/rest/v2/all')
@@ -31,12 +43,23 @@ class ListCountries extends Component{
   }
    render(){
      let { countries }= this.state
+    let countryToRender = 
+      this.state.countries
+    ? this.state.countries.filter(country => {
+      let matchesCountry = country.name.toLowerCase().includes(
+          this.state.filterString.toLowerCase())
+      return matchesCountry
+          })
+    : []
      return(
       
  <Fragment>
-
-    { countries.map( country => 
+    <Filter onTextChange={text => {
+    this.setState({filterString: text})
+  }}/>
+    { countryToRender.map( country => 
              <Box width={1/5} float="left" >
+             
                <Panel >
                 <Image ratio={1/3} src={country.flag}/>
                   <Subhead bg="yellow" fontSize={2}>
