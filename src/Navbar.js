@@ -10,7 +10,7 @@ const Navbar = () => (
   <nav>
      <Heading textAlign="center">Around the World</Heading>
         <Subhead textAlign="center">Learn about our neighbors around the world!</Subhead>
-    <NavLink to="/">Home</NavLink>
+    <NavLink bg="gold"><Link to="/">Home</Link></NavLink>
   </nav>
 )
 
