@@ -63,7 +63,7 @@ class ListCountries extends Component{
              
                <Panel >
                 <Image ratio={1/3} src={country.flag}/>
-                  <Subhead bg="yellow" fontSize={2}>
+                  <Subhead bg="gold" fontSize={2}>
                     {country.name}
                       <br/>
                     <Small>({country.nativeName})</Small>

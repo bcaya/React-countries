@@ -3,14 +3,20 @@ import { Link } from 'react-router-dom';
 import {
   NavLink,
   Heading,
-  Subhead
+  Subhead,
+  Toolbar,
+  Button
 } from 'rebass'; 
 
 const Navbar = () => (
   <nav>
      <Heading textAlign="center">Around the World</Heading>
         <Subhead textAlign="center">Learn about our neighbors around the world!</Subhead>
-    <NavLink bg="gold"><Link to="/">Home</Link></NavLink>
+    <Toolbar bg="gold">
+      <Link to="/">
+        <Button is='a'>Home</Button>
+      </Link>
+    </Toolbar>
   </nav>
 )
 
