@@ -1,4 +1,4 @@
-import React from 'react'; 
+import React, {Fragment} from 'react'; 
 import { Link } from 'react-router-dom';
 import {
   NavLink,
@@ -9,15 +9,15 @@ import {
 } from 'rebass'; 
 
 const Navbar = () => (
-  <nav>
-     <Heading textAlign="center">Around the World</Heading>
-        <Subhead textAlign="center">Learn about our neighbors around the world!</Subhead>
-    <Toolbar bg="gold">
-      <Link to="/">
-        <Button is='a'>Home</Button>
-      </Link>
-    </Toolbar>
-  </nav>
+    <Fragment>
+       <Heading textAlign="center" children="Around the World" />
+          <Subhead textAlign="center" children="Learn about our neighbors around the world!"/>
+      <Toolbar bg="gold">
+        <Link to="/">
+          <Button is='a' children="Home" />
+        </Link>
+      </Toolbar>
+    </Fragment>
 )
 
 export default Navbar; 

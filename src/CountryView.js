@@ -64,7 +64,7 @@ class CountryView extends React.Component {
     return(
       <div>
         <Navbar />
-          <Container mt="40px">
+          <Container mt="40px" bg="lightBlue">
             <Row>
               <Column width="1/3">
                 <Card>
@@ -137,12 +137,112 @@ class CountryView extends React.Component {
                   </Row>
                 </Card>
               </Column>
-              <Column width="1/3">
+            </Row>
+            <Row>
+              <Column width="1/3" >
                 <Card>
-                  <BackgroundImage
-                    ratio={1} 
-                    src='http://countries.petethompson.net/data/flags/mex.svg'
-                  />
+                  <Heading children="Codes" />
+                  <Row>
+                    <Column>
+                      <Text textAlign='left' fontWeight='bold' children="ISO 3166-1 alpha-2" />
+                    </Column>
+                     <Column>
+                      <Text textAlign='left'  children="MX" />
+                    </Column>
+                  </Row>
+                  <Row>
+                    <Column>
+                      <Text textAlign='left' fontWeight='bold' children="ISO 3166-1 alpha-2" />
+                    </Column>
+                     <Column>
+                      <Text textAlign='left'  children="MX" />
+                    </Column>
+                  </Row>
+                  <Row>
+                    <Column>
+                      <Text textAlign='left' fontWeight='bold' children="ISO 3166-1 numeric" />
+                    </Column>
+                    <Column>
+                      <Text textAlign='left' children="484"/>
+                    </Column>
+                  </Row>
+                  <Row>
+                    <Column>
+                      <Text textAlign='left' fontWeight='bold' children="International calling code" />
+                    </Column>
+                    <Column>
+                      <Text textAlign='left' children='52' />
+                    </Column>
+                  </Row>
+                  <Row>
+                    <Column>
+                      <Text textAlign='left' fontWeight='bold' children='ISO 4217 currency code' />
+                    </Column>
+                    <Column>
+                      <Text textAlign='left' children='MXN' />
+                    </Column>
+                  </Row>
+                  <Row>
+                    <Column>
+                      <Text textAlign='left' fontWeight='bold' children='Top level domain'/>
+                    </Column>
+                    <Column>
+                      <Text textAlign='left' children='.mx' />
+                    </Column>
+                  </Row>
+                </Card>
+              </Column>
+              <Column width="1/3" >
+                <Card>
+                  <Heading children="Geography" />
+                  <Row>
+                    <Column>
+                      <Text textAlign='left' fontWeight='bold' children="Region" />
+                    </Column>
+                     <Column>
+                      <Text textAlign='left'  children="Americas" />
+                    </Column>
+                  </Row>
+                  <Row>
+                    <Column>
+                      <Text textAlign='left' fontWeight='bold' children="Subregion" />
+                    </Column>
+                     <Column>
+                      <Text textAlign='left'  children="Central America" />
+                    </Column>
+                  </Row>
+                  <Row>
+                    <Column>
+                      <Text textAlign='left' fontWeight='bold' children="Capital" />
+                    </Column>
+                    <Column>
+                      <Text textAlign='left' children="Mexico City"/>
+                    </Column>
+                  </Row>
+                  <Row>
+                    <Column>
+                      <Text textAlign='left' fontWeight='bold' children="Demonym" />
+                    </Column>
+                    <Column>
+                      <Text textAlign='left' children='Mexican' />
+                    </Column>
+                  </Row>
+                  <Row>
+                    <Column>
+                      <Text textAlign='left' fontWeight='bold' children='Lat/Lng' />
+                    </Column>
+                    <Column>
+                      <Text textAlign='left' as='a' children='23, -102' />
+                    </Column>
+                  </Row>
+                  <Row>
+                    <Column>
+                      <Text textAlign='left' fontWeight='bold' children='Area'/>
+                    </Column>
+                    <Column>
+                      <Text textAlign='left' children='1964375km²' />
+                    </Column>
+                  </Row>
                 </Card>
               </Column>
             </Row>  
