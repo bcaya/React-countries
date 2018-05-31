@@ -15,7 +15,7 @@ class Home extends React.Component{
    <Container>
       <Navbar />
         <Divider/>
-      <Flex flexWrap='wrap' width={1}flexDirection="row" mx={-2}>
+        <Flex flexWrap='wrap' width={1}flexDirection="row" mx={-2}>
        <ListCountries/>
     </Flex>
    </Container>

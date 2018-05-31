@@ -1,7 +1,8 @@
 import React, { Component, Fragment } from 'react';
+import {connect} from 'react-redux';
 import {
   ButtonCircle,
-  Panel,
+  Card,
   BackgroundImage,
   Subhead,
   Box,
@@ -10,7 +11,8 @@ import {
   Row,
   Column,
   Small, 
-  Input
+  Input,
+  ButtonTransparent
 } from 'rebass'; 
 import axios from 'axios'; 
 
@@ -26,7 +28,7 @@ class Filter extends React.Component{
    render() {
       return (
         <div>
-          <Input type="text" onKeyUp={event => 
+          <Input type="text" placeholder='Search' onKeyUp={event => 
             this.props.onTextChange(event.target.value)}/>
         </div>
       )
@@ -59,24 +61,36 @@ class ListCountries extends Component{
     this.setState({filterString: text})
   }}/>
     { countryToRender.map( country => 
-             <Box width={1/5} float="left" >
+             <Box width={1/5} float="left" key={country.name} >
              
-               <Panel >
-                <Image ratio={1/3} src={country.flag}/>
+               <Card >
+                {/* <Image ratio={1/3} src={country.flag}/> */}
                   <Subhead bg="gold" fontSize={2}>
-                    {country.name}
+                    <ButtonTransparent children={country.name} />
                       <br/>
                     <Small>({country.nativeName})</Small>
                   </Subhead>
-                <Text 
-                  textAlign='left'>
-                    {country.capital}
-                    {country.subregion}
-                  {country.topLevelDomain}
-                  {country.population}
-                  {country.callingCodes}
+                  <Text 
+                    textAlign='left'
+                    children={country.capital}>
+                  <Text 
+                    textAlign='left'
+                    children={country.subregion}
+                    />
+                  <Text
+                    textAlign='left'
+                    children={country.topLevelDomain}
+                    />
+                  <Text
+                    textAlign='left'
+                    children={country.population}
+                    />
+                  <Text
+                    textAlign='left'
+                    children={country.callingCodes}
+                    />
                 </Text>
-               </Panel>
+               </Card>
              </Box>
     )}
  </Fragment>
@@ -86,4 +100,4 @@ class ListCountries extends Component{
    }
 }
 
-export default ListCountries; 
+export default connect()(ListCountries); 

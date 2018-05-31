@@ -1,18 +1,10 @@
-import React,{Component} from 'react';
+import React from 'react';
 import { 
-  Flex,
-  Box,
   Heading,
-  Panel,
-  PanelHeader,
-  PanelFooter,
   Container,
   Column,
   Row,
-  Border,
-  Group,
   Card,
-  BackgroundImage,
   Text
     } from 'rebass';
 import Navbar from './Navbar'; 
@@ -70,7 +62,7 @@ class CountryView extends React.Component {
                 <Card>
                   <Heading children="Names" />
                   <Row>
-                    <Column>
+                    <Column width="1/4">
                       <Text textAlign='left' fontWeight='bold' children='Common' />
                     </Column>
                     <Column>
